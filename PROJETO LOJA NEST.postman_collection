@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "bcf41826-6619-4942-9fa6-f90fb0e8d393",
+		"name": "PROJETO LOJA NEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23891547"
+	},
+	"item": [
+		{
+			"name": "LISTA PRODUTOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CADASTRA PRODUTOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Figura de ação Marvel Homem Aranha Olympus Homem Aranha E6358 de Hasbro Classic\",\r\n    \"valor\": 70.00,\r\n    \"quantidade\": 10,\r\n    \"descricao\": \"Produto novo, bem acabado, alegria para colecionadores\",\r\n    \"caracteristicas\": [{\r\n        \"nome\": \"Fabricante\",\r\n        \"descricao\": \"Iron Studios\"\r\n    },{\r\n        \"nome\": \"material\",\r\n        \"descricao\": \"Plástico\"\r\n    }],\r\n    \"imagens\": [{\r\n        \"url\": \"https://i.imgur.com/dwDZICq.jpg\",\r\n        \"descricao\": \"Imagem do Homem Aranha\"\r\n    }],\r\n    \"categoria\": \"Colecionáveis\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTA USUÁRIOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CADASTRA USUÁRIOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Elisinha\",\r\n    \"email\": \"lisinha@mail.com\",\r\n    \"senha\": 123456\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ATUALIZA USUÁRIO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"ElisinhaAtualizada\",\r\n    \"email\": \"lisinhass@mail.com\",\r\n    \"senha\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios/3dfa5390-564d-4639-a4d4-948084bd70b9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios",
+						"3dfa5390-564d-4639-a4d4-948084bd70b9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETA USUÁRIOS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/usuarios/6d3407b2-a8b3-45b1-97df-f2299f4632b2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"usuarios",
+						"6d3407b2-a8b3-45b1-97df-f2299f4632b2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
