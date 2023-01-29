@@ -10,6 +10,7 @@ import {
   ArrayMinSize,
   IsString,
   IsUrl,
+  IsUUID,
 } from 'class-validator';
 import constants from 'src/config/constants.config';
 
@@ -33,6 +34,9 @@ export class ImagemProdutoDTO {
 }
 
 export class CriaProdutoDTO {
+  @IsUUID(undefined, { message: constants.STATUS.MESSAGES.ERROR.INVALIDID })
+  usuarioId: string;
+
   @IsString()
   @IsNotEmpty({ message: constants.STATUS.MESSAGES.ERROR.NOMENOTEMPTY })
   nome: string;

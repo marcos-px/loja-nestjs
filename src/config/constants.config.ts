@@ -11,6 +11,10 @@ export default {
         MINVALUE: 'O valor deve ser positivo e acima de zero.',
         MISSINGPASSWORD: 'A senha precisa ter ao menos 6 caracteres.',
         USEREXISTS: 'Usuário já existe com este email.',
+        INVALIDID: 'ID Inválida',
+      },
+      SUCCESS: {
+        CREATED: 'Usuário criado com sucesso.',
       },
     },
   },
