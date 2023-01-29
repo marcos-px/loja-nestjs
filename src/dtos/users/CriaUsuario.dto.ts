@@ -1,12 +1,15 @@
 import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
+import constants from 'src/config/constants.config';
+import { UniqueEmail } from 'src/validations/unique-email.validator';
 
 export class CriaUsuarioDTO {
-  @IsNotEmpty({ message: 'O nome não pode ser vazio.' })
+  @IsNotEmpty({ message: constants.STATUS.MESSAGES.ERROR.NOMENOTEMPTY })
   nome: string;
 
-  @IsEmail(undefined, { message: 'O email informado é inválido.' })
+  @IsEmail(undefined, { message: constants.STATUS.MESSAGES.ERROR.EMAILINVALID })
+  @UniqueEmail({ message: constants.STATUS.MESSAGES.ERROR.USEREXISTS })
   email: string;
 
-  @MinLength(6, { message: 'A senha precisa ter ao menos 6 caracteres.' })
+  @MinLength(6, { message: constants.STATUS.MESSAGES.ERROR.MISSINGPASSWORD })
   senha: string;
 }
