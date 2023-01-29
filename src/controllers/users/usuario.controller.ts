@@ -5,6 +5,8 @@ import { UsuarioEntity } from 'src/entities/usuario.entity';
 import { UsuarioRepository } from 'src/repositories/usuario.repository';
 import constants from 'src/config/constants.config';
 import { ListaUsuarioDTO } from 'src/dtos/users/ListaUsuario.dto';
+import { AtualizaUsuarioDTO } from 'src/dtos/users/AtualizaUsuario.dto';
+import { Param, Put } from '@nestjs/common/decorators';
 
 @Controller('/usuarios')
 export class UsuarioController {
@@ -33,5 +35,19 @@ export class UsuarioController {
       (usuario) => new ListaUsuarioDTO(usuario.id, usuario.nome),
     );
     return usuariosLista;
+  }
+  @Put('/:id')
+  async atualizaUsuario(
+    @Param('id') id: string,
+    @Body() novosDados: AtualizaUsuarioDTO,
+  ) {
+    const usuarioAtualizado = await this.usuarioRepository.atualiza(
+      id,
+      novosDados,
+    );
+    return {
+      usuario: usuarioAtualizado,
+      message: constants.STATUS.MESSAGES.SUCCESS.UPDATED,
+    };
   }
 }

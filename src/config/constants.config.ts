@@ -15,6 +15,7 @@ export default {
       },
       SUCCESS: {
         CREATED: 'Usuário criado com sucesso.',
+        UPDATED: 'Usuário Atualizado com sucesso.',
       },
     },
   },
